@@ -11,7 +11,13 @@
       ⭐️
       <% end %>
     </p>
-    <p><%= review.content %></p>
+    <p>
+      <%= review.content %>
+        <%= link_to "Delete",
+        review_path(review),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </p>
   <% end %>
   <p><%= link_to "Submit a new review", new_restaurant_review_path(@restaurant) %></p>
   <hr>
